@@ -1,0 +1,1 @@
+Exemplo de Local Storage
