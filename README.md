@@ -3,7 +3,7 @@ Neste exemplo, procuro demonstrar como utilizar a API LocalStorage, o uso dessa 
 ou seja desenvolver pensando primeiramente em tecnologias offline, principalmente no mundo Mobilie, é muito comum hoje quando voçe baixa um aplicativo qualquer a primeira coisa que ele te pede é uma conexão com a internet. Pronto se você não tem um pacote de dados 
 bacana, ou não está conectado em nenhuma rede wi-fi, o app não irá funcionar. Este pode ser um bom motivo para que o usuário exclua seu aplicativo.
 
-Basicamente o ciclo para construir aplicativos off-line first são:
+Basicamente os passos para construir aplicativos off-line first são:
 
 - a aplicação deve detectar o estado "off-line";
 - Armazenar dados off-line (ae entra a Web Storage API);
