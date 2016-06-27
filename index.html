@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Telefônica</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery.growl.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mentoria Javascript</a>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-6">
+                    <h1 class="text-center">Lista Telefônica</h1>
+                    <h2 class="text-center">LocalStorage + JQuery + Bootstrap</h1>
+                    <p class="lead text-center">Neste exemplo foi construido um CRUD (create, read, update e delete) utilizando o  <mark>LocalStorage </mark> como repositório de dados. </p>
+                    <p class="text-center"><small>Foi utilizado o <mark><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></mark> para o layout, o <mark><a href="https://jqueryvalidation.org/" target="_blank">Jquery Validation</a></mark> para validar o formulário, o <mark><a href="https://datatables.net/" target="_blank">Jquery Datatables</a></mark> para construir a grid de resultados com opções de ordenação, busca e filtro, usei ainda um plugin para lançar as mensagens ao usuário o <mark><a href="http://ksylvest.github.io/jquery-growl/" target="_blank">Jquery Growl</a></mark></small></p>
+                    <hr/>
+                    <button class="btn btn-danger" onclick="ClearLocalStorage()"><span class='glyphicon glyphicon-trash'></span> Deletar localStorage </button>
+                    <button class="btn btn-success" onclick="GetContentLocalStorage()"><span class='glyphicon glyphicon-zoom-in'></span> Mostrar conteúdo localStorage no console </button>
+             </div>
+            <div class="col-md-6">
+                <div class="well well-sm">
+                    <form class="form-horizontal" id="frmCadastro">
+                        <fieldset>
+                            <legend class="text-center"><span class='glyphicon glyphicon-user'></span> Contato - <label id="operation"></label></legend>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Código:</label>
+                                <div class="col-md-9">
+                                    <input id="codigo" name="codigo" type="text" class="form-control onlyNumbers">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Nome:</label>
+                                <div class="col-md-9">
+                                    <input id="nome" name="nome" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">User:</label>
+                                <div class="col-md-9">
+                                    <input id="userName" name="userName" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Ramal:</label>
+                                <div class="col-md-9">
+                                    <input id="ramal" name="ramal" type="text"  class="form-control onlyNumbers">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">E-mail:</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="email" type="text"  class="form-control">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" class="btn btn-primary" id="btnClear"><span class="glyphicon glyphicon-erase"></span>&nbsp;Limpar</button>
+                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>&nbsp;Salvar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Contatos cadastrados:</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-condensed table-bordered" id="tblListar">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/datatables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.growl.js"></script>
+    <script type="text/javascript" src="js/funcoes.js"></script>
+</body>
+</html>
